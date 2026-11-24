@@ -21,7 +21,7 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed()
-        #print(key_lst)
+        print(key_lst)
         if key_lst[pg.K_UP]:
             kk_rct.move_ip((0, -1))
         if key_lst[pg.K_DOWN]:
@@ -30,6 +30,30 @@ def main():
             kk_rct.move_ip((-1, 0))
         if key_lst[pg.K_RIGHT]:
             kk_rct.move_ip((+1, 0))
+        key_lst = pg.key.get_pressed()
+        if key_lst[pg.K_UP]:
+            kk_rct.move_ip((0, -1))
+        if key_lst[pg.K_DOWN]:
+            kk_rct.move_ip((0, +1))
+        if key_lst[pg.K_LEFT]:
+            kk_rct.move_ip((-1, 0))
+        if key_lst[pg.K_RIGHT]:
+            kk_rct.move_ip((+1, 0))
+        else:
+            kk_rct.move_ip((-1, 0))
+
+        #key_lst = pg.key.get_pressed()
+        #vx = -1  # 何も押していないときは左へ流れる
+        #vy = 0
+        #if key_lst[pg.K_UP]:
+        #    vy = -1
+        #if key_lst[pg.K_DOWN]:
+        #    vy = 1
+        #if key_lst[pg.K_LEFT]:
+        #    vx = -2
+        #if key_lst[pg.K_RIGHT]:
+        #    vx = 1
+        #kk_rct.move_ip(vx, vy)
 
         x=tmr%3200 #練習5，9
         screen.blit(bg_img, [-x, 0]) #練習2
